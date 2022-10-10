@@ -45,7 +45,17 @@ public class App {
 
     //todo Task 3
     public void printPyramid(){
-        // input your solution here
+        int zeile = 6;
+
+        for (int a = 0; a < zeile; a++) {
+            for (int b = 0; b < zeile -1 -a; b++) {
+                System.out.print(" ");
+            }
+            for (int c = 0; c < a*2+1; c++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
     }
 
     //todo Task 4
