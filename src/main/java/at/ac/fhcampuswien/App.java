@@ -1,11 +1,40 @@
 package at.ac.fhcampuswien;
 
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class App {
 
     //todo Task 1
     public void largestNumber(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Number 1: ");
+
+        String n1 = scanner.next();
+
+        n1 = n1.replace(',', '.');
+        double number = Double.parseDouble(n1);
+
+        if (number <= 0) {
+            System.out.println("No number entered.");
+        } else {
+            double max = number;
+            int k = 2;
+            while (number > 0) {
+                System.out.print("Number " + k + ": ");
+                n1 = scanner.next();
+                n1 = n1.replace(',', '.');
+                number = Double.parseDouble(n1);
+                k++;
+                if (number > max) {
+                    max = number;
+                }
+            System.out.println("The largest number is " + String.format("%1.2f", max));
+        }
+    }
+
+
+
         // input your solution here
     }
 
