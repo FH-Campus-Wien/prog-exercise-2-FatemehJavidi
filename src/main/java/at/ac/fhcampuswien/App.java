@@ -10,13 +10,13 @@ public class App {
 
     //todo Task 1
     public void largestNumber(){
-        Scanner scanner = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
         int x = 1;
         float y = 0;
         while (true) {
             System.out.print("Number " + x + ": ");
-            Float number = Float.parseFloat(scanner.next());
-            if (x == 1 && number <= 0) {
+            Float number = Float.parseFloat(scan.next());
+            if (x == 1 && number <= 0) { // daca i este primul numar (1)
                 System.out.println("No number entered.");
                 return;
             }
@@ -30,7 +30,6 @@ public class App {
         }
         System.out.printf(Locale.US, "The largest number is %.2f", y);
         System.out.println();
-    }
 
     }
 
