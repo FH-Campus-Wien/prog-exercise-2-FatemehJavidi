@@ -2,6 +2,7 @@ package at.ac.fhcampuswien;
 
 import java.sql.SQLOutput;
 import java.util.HashSet;
+import java.util.Locale;
 import java.util.Scanner;
 import java.util.Set;
 
@@ -10,31 +11,26 @@ public class App {
     //todo Task 1
     public void largestNumber(){
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Number 1: ");
-
-        String n1 = scanner.next();
-
-        n1 = n1.replace(',', '.');
-        double number = Double.parseDouble(n1);
-
-        if (number <= 0) {
-            System.out.println("No number entered.");
-        } else {
-            double max = number;
-            int k = 2;
-            while (number > 0) {
-                System.out.print("Number " + k + ": ");
-                n1 = scanner.next();
-                n1 = n1.replace(',', '.');
-                number = Double.parseDouble(n1);
-                k++;
-                if (number > max) {
-                    max = number;
-                }
-            System.out.println("The largest number is " + String.format("%1.2f", max));
+        int x = 1;
+        float y = 0;
+        while (true) {
+            System.out.print("Number " + x + ": ");
+            Float number = Float.parseFloat(scanner.next());
+            if (x == 1 && number <= 0) {
+                System.out.println("No number entered.");
+                return;
+            }
+            if (x > 1 && number <= 0) {
+                break;
+            }
+            if (number > y) {
+                y = number;
+            }
+            x++;
         }
+        System.out.printf(Locale.US, "The largest number is %.2f", y);
+        System.out.println();
     }
-
 
     }
 
